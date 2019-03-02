@@ -36,7 +36,7 @@ defmodule ReversePipe do
     :lists.foldl(func, head, tail)
   end
 
-  defp unpipe(expr) do
+  def unpipe(expr) do
     :lists.reverse(unpipe(expr, []))
   end
 
