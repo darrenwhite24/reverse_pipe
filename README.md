@@ -18,16 +18,14 @@ Then run `mix deps.get`
 
 * `import ReversePipe` in your module
 * pipe with `>>>`
-* use as you would the normal pipe operator
+* use as you would the normal pipe operator (works well with `|>`)
 
 ```elixir
 defmodule MyModule do
   import ReversePipe
 
   def my_function do
-    "WORLD"
-    |> String.downcase()
-    >>> Map.put(%{a: "hello"}, :b)
+    "world" >>> Map.put(%{a: "hello"}, :b)
   end
 end
 
