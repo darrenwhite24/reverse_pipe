@@ -1,16 +1,20 @@
 defmodule ReversePipe do
   @moduledoc """
-  Documentation for ReversePipe.
+  Documentation for the reverse pipe operator
   """
 
   @doc """
-  Hello world.
+  Reverse Pipe operator
 
-  ## Examples
+  This operator will insert the result of the right-hand side function call
+  to the end of the left-hand side expression's argument list.
 
-      iex> ReversePipe.hello()
-      :world
+  ### Examples
 
+        iex> 1 >>> Map.put(%{}, :b)
+        %{b: 1}
+
+  It can also mix with the `|>` operation
   """
   
   defmacro left >>> right do
