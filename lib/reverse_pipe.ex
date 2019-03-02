@@ -1,6 +1,6 @@
 defmodule ReversePipe do
   @moduledoc """
-  Documentation for the reverse pipe operator
+  Documentation for the Reverse Pipe operator
   """
 
   @doc """
