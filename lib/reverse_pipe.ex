@@ -9,12 +9,9 @@ defmodule ReversePipe do
   This operator will insert the result of the right-hand side function call
   to the end of the left-hand side expression's argument list.
 
-  ### Examples
-
       iex> 1 >>> Map.put(%{}, :b)
-      %{b: 1}
+      #=> %{b: 1}
 
-  It can also mix with the `|>` operation
   """
   
   defmacro left >>> right do
@@ -39,6 +36,14 @@ defmodule ReversePipe do
 
     :lists.foldl(func, head, tail)
   end
+
+  @doc """
+  Breaks a pipeline expression into a list.
+
+      iex> ReversePipe.unpipe(quote do: 5 >>> div(100))
+      #=> [{5, 0}, {{:div, [], [100]}, 0}]
+
+  """
 
   def unpipe(expr) do
     :lists.reverse(unpipe(expr, []))
