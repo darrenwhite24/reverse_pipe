@@ -11,8 +11,8 @@ defmodule ReversePipe do
 
   ### Examples
 
-        iex> 1 >>> Map.put(%{}, :b)
-        %{b: 1}
+      iex> 1 >>> Map.put(%{}, :b)
+      %{b: 1}
 
   It can also mix with the `|>` operation
   """
