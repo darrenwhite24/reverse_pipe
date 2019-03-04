@@ -25,10 +25,20 @@ defmodule MyModule do
   import ReversePipe
 
   def my_function do
-    "world" >>> Map.put(%{a: "hello"}, :b)
+    2 >>> Map.put(%{a: 1}, :b)
+  end
+
+  def my_second_function do
+    1
+    |> Kernel.+(1)
+    >>> Map.put(%{a: 1}, :b)
+    |> Map.take([:b])
   end
 end
 
 MyModule.my_function()
-# %{a: "hello", b: "world"}
+# %{a: 1, b: 2}
+
+MyModule.my_second_function()
+# %{b: 2}
 ```
