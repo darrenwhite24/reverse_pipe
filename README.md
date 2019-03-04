@@ -1,4 +1,4 @@
-# Reverse Pipe
+# Reverse Pipe [![Hex pm](http://img.shields.io/hexpm/v/reverse_pipe.svg?style=flat)](https://hex.pm/packages/reverse_pipe)
 
 The pipe operator that inserts the incoming argument at the _end_ of the argument list.
 
